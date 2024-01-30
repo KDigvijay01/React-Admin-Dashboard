@@ -1,9 +1,5 @@
-import React from 'react'
+import React from 'react';
 
-const Stacked = () => {
-  return (
-    <div>Stacked</div>
-  )
-}
+const Stacked = () => <div>Stacked</div>;
 
-export default Stacked
+export default Stacked;

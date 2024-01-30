@@ -1,6 +1,7 @@
-import React, { createContext, useContext, useState } from "react";
+/* eslint-disable react/jsx-no-constructed-context-values */
+import React, { createContext, useContext, useState } from 'react';
 
-export const DataContext = createContext("");
+export const DataContext = createContext('');
 
 const initialState = {
   chat: false,
@@ -11,22 +12,22 @@ const initialState = {
 
 const ContextProvider = ({ children }) => {
   const [activeMenu, setActiveMenu] = useState(true);
-  const handleActive = (value) => setActiveMenu(!activeMenu);
+  const handleActive = () => setActiveMenu(!activeMenu);
   const [isClicked, setIsClicked] = useState(initialState);
-  const [currentColor, setCurrentColor] = useState("#03C907");
-  const [currentMode, setCurrentMode] = useState("Light");
+  const [currentColor, setCurrentColor] = useState('#03C907');
+  const [currentMode, setCurrentMode] = useState('Light');
   const [themeSettings, setThemeSettings] = useState(false);
 
   const setMode = (e) => {
     setCurrentMode(e.target.value);
-    localStorage.setItem("themeMode", e.target.value);
-    setThemeSettings(false)
+    localStorage.setItem('themeMode', e.target.value);
+    setThemeSettings(false);
   };
 
   const setColor = (color) => {
     setCurrentColor(color);
-    localStorage.setItem("colorMode", color);
-    setThemeSettings(false)
+    localStorage.setItem('colorMode', color);
+    setThemeSettings(false);
   };
 
   const handleClick = (value) => {

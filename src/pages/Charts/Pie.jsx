@@ -1,9 +1,5 @@
-import React from 'react'
+import React from 'react';
 
-const Pie = () => {
-  return (
-    <div>Pie</div>
-  )
-}
+const Pie = () => <div>Pie</div>;
 
-export default Pie
+export default Pie;

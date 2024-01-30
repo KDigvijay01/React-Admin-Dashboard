@@ -1,20 +1,19 @@
-import React from "react";
-import { MdOutlineCancel } from "react-icons/md";
-import { BsCheck } from "react-icons/bs";
-import { TooltipComponent } from "@syncfusion/ej2-react-popups";
-import { themeColors } from "../data/dummy";
-import { useStateContext } from "../contexts/ContextProvider";
+/* eslint-disable jsx-a11y/control-has-associated-label */
+import React from 'react';
+import { MdOutlineCancel } from 'react-icons/md';
+import { BsCheck } from 'react-icons/bs';
+import { TooltipComponent } from '@syncfusion/ej2-react-popups';
+import { themeColors } from '../data/dummy';
+import { useStateContext } from '../contexts/ContextProvider';
 
 const ThemeSettings = () => {
-
   const {
     currentColor,
-currentMode,
-setMode,
-setColor,
-themeSettings,
-setThemeSettings
-  }= useStateContext();
+    currentMode,
+    setMode,
+    setColor,
+    setThemeSettings,
+  } = useStateContext();
   return (
     <div className="bg-half-transparent w-screen fixed nav-item top-0 right-0">
       <div className="float-right h-screen dark:text-gray-200 bg-white dark:[#484B52] w-400">
@@ -23,7 +22,7 @@ setThemeSettings
           <button
             type="button"
             onClick={() => setThemeSettings(false)}
-            style={{ color: "rgb(153, 171, 180)", borderRadius: "50%" }}
+            style={{ color: 'rgb(153, 171, 180)', borderRadius: '50%' }}
             className="text-2xl p-3 hover:drop-shadow-xl hover:bg-light-gray"
           >
             <MdOutlineCancel />
@@ -40,10 +39,10 @@ setThemeSettings
               id="light"
               className="cursor-pointer"
               onChange={setMode}
-              checked={currentMode==="Light" }
+              checked={currentMode === 'Light'}
               value="Light"
-
             />
+            {/* eslint-disable-next-line jsx-a11y/label-has-associated-control */}
             <label htmlFor="light" className="ml-2 text-md cursor-pointer">
               Light
             </label>
@@ -58,8 +57,9 @@ setThemeSettings
               value="Dark"
               className="cursor-pointer"
               onChange={setMode}
-              checked={currentMode==="Dark" }
+              checked={currentMode === 'Dark'}
             />
+            {/* eslint-disable-next-line jsx-a11y/label-has-associated-control */}
             <label htmlFor="dark" className="ml-2 text-md cursor-pointer">
               Dark
             </label>
@@ -80,12 +80,11 @@ setThemeSettings
                     type="button"
                     className="h-10 w-10 rounded-full cursor-pointer"
                     style={{ backgroundColor: item.color }}
-                    onClick={() =>setColor(item.color)}
+                    onClick={() => setColor(item.color)}
                   >
                     <BsCheck
-                      className={`ml-2 text-2xl text-white ${item.color === currentColor
-                          ? "block"
-                          : "hidden"
+                      className={`ml-2 text-2xl text-white ${
+                        item.color === currentColor ? 'block' : 'hidden'
                       }`}
                     />
                   </button>
